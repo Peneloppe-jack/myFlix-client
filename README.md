@@ -1,4 +1,1 @@
-# myFlix-client
- 
-Using React Build tools to set up myFlilx application.
-
+Using React Build tools to set up myFlilx app
