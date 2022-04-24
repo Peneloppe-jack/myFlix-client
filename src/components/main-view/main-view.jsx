@@ -6,8 +6,11 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
-export class MainView extends React.Component {
+//import './movie-view.scss'
+//import Button from 'react-bootstrap/Button';
 
+
+export class MainView extends React.Component {
 constructor(){ 
     super();
     this.state = {
@@ -38,7 +41,8 @@ onLoggedIn(user) {
 render() {
     const { movies, selectedMovie, user } = this.state;
 
-
+    if (!user) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
+ else {
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
         if (movies.length === 0) return <div className="main-view"/>;
         
@@ -54,6 +58,6 @@ render() {
         );
     }
 
-}
+}}
         
 export default MainView;

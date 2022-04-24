@@ -1,47 +1,79 @@
 //cf Creating User /Registering
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
 
-//import './login-view.scss';
+//import './registration-view.scss';
 
-export function RegisterView(props) {
+export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-   
+    const [birthday, setBirthday] = useState('');
+
+
+ render ()  
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username, password, email, birhday);
+        console.log(username, password, email);
         /* Send a request to the server for authentication */
         /* then call props.onLoggedIn(username) */
         props.onRegistration(username);
-    };
-
-return (
-<form>
-    <label>
-      Username:
-      <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-    </label>
-  
-    <label>
-      Password:
-      <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-    </label>
-    
-    <label> 
-      Email:
-      <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-    </label>
-</form>
-);
 };
 
+return (
+  <div>
+    <form>
+
+      <label>
+        Username:
+        <input
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        />
+      </label>
+
+      <label>
+        Password:
+        <input
+        type="text"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        />
+      </label>
+
+      <label>
+        Email:
+        <input
+        type="text"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        />
+      </label>
+
+      <label>
+        Birthday:
+        <input
+        type="Date"
+        value={birthday}
+        onChange={(e) => setBirthday(e.target.value)}
+        />
+      </label>
+
+          <button type="submit">Submit</button>
+
+    </form>
+  </div>
+
+);}
+
+
 RegistrationView.propTypes = {
-  register: PropTypes.shape({
+  newUser: PropTypes.shape({
       Username: PropTypes.string.isRequired,
       Password: PropTypes.string.isRequired,
-      Email: PropTypes.string.isRequired,
-  }),
-  onRegistration: PropTypes.func,
+      Email: PropTypes.string.isRequired
+  }).isRequired,
+  onRegistration: PropTypes.func,isRequired
 };
