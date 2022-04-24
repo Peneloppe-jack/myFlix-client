@@ -11,11 +11,11 @@ export function LoginView(props) {
     console.log(username);
     /* Send a request to the server for authentication */
     /* then call props.onLoggedIn(username) */
-    props.onLoginView(username);
+    props.onRegistrationView(username);
   };
 
   return (
-    <form>
+   <> <form>
 
       <label>
         Username:
@@ -31,17 +31,22 @@ export function LoginView(props) {
         Email:
         <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
       </label>
-     
-     <button type="submit" onClick={handleSubmit}>Submit</button>
 
-    < button type="Register" onClick={handleSubmit}>Register</button>
+      <button type="submit" onClick={handleSubmit}>Submit</button>
     </form>
+
+<div><br />
+<span>To create an account </span><br />
+<button type="submit">Register Here !</button> 
+</div></>
+  
   );
 }
+
 LoginView.propTypes = {
     user: PropTypes.shape({
-        Username: PropTypes.string.isRequired,
-        Password: PropTypes.string.isRequired,
+    Username: PropTypes.string.isRequired,
+    Password: PropTypes.string.isRequired,
     }),
     onLoggedIn: PropTypes.func.isRequired
 };

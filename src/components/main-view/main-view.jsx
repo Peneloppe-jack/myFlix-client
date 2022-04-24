@@ -18,9 +18,9 @@ constructor(){
 
 componentDidMount(){
     axios.get('https://mysterious-wildwood-desperado.herokuapp.com/movies')
-    .then(response => {
+    .then(Response => {
         this.setState({
-         movies: response.data });
+         movies: Response.data });
      })
    .catch(error => {
         console.log(error);
@@ -42,9 +42,9 @@ render() {
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
         if (movies.length === 0) return <div className="main-view"/>;
         
-        return (
+    return (
         <div className="main-view">
-                {selectedMovie
+            {selectedMovie
                     ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
                     : movies.map((movie, index) => (
                         <MovieCard key={movie._id} movie={movie} index={index} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
