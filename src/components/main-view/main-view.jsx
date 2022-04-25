@@ -1,48 +1,63 @@
-//Main container
 import React from 'react';
+import axios from 'axios';
+
+import { RegistrationView } from '../registration-view/registration-view';
+import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
-export class MainView extends React.Component {
+//import './movie-view.scss'
+//import Button from 'react-bootstrap/Button';
 
+
+export class MainView extends React.Component {
 constructor(){ 
     super();
     this.state = {
-    movies: [
-            { _id: 1, Title: 'Inception', 
-            Description: 'A troubled thief who extracts secrets from the dreams of his victims. His last job : a dangerous mission to plant an idea in a the subuconcious of his target.', 
-            ImagePath: 'https://fr.web.img2.acsta.net/medias/nmedia/18/72/34/14/19476654.jpg'},
+    movies: [],
+    selectedMovies:null,
+    user: null };
+    }
 
-            { _id: 2, Title: 'The Shawshank Redemption',
-             Description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
-              ImagePath: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaqbck_Vr9qiTAwDkR7ln02KPTkRLdNtIud5RR3WkRfvKo0tei'},
-
-            { _id: 3, Title: 'Gladiator',
-             Description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.', 
-             ImagePath: 'https://static.kino.de/wp-content/uploads/2015/08/gladiator-2000-filmplakat-rcm1200x1200u.jpg'}
-            ],
-            selectedMovies:null, /// initial value set on null renders a list as no movie as been selected
-            };
-          }
+componentDidMount(){
+    axios.get('https://mysterious-wildwood-desperado.herokuapp.com/movies')
+    .then(Response => {
+        this.setState({
+         movies: Response.data });
+     })
+   .catch(error => {
+        console.log(error);
+        });
+    }
 
 setSelectedMovie(newSelectedMovie) { 
-     this.setState({
-        selectedMovie: newSelectedMovie
-        });
+     this.setState({selectedMovie: newSelectedMovie });
      }
+
+onLoggedIn(user) {
+        this.setState({ user });
+    }
+
 render() {
-    const { movies, selectedMovie } = this.state;
-        if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
-        return (
+    const { movies, selectedMovie, user } = this.state;
+
+    if (!user) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
+ else {
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+        if (movies.length === 0) return <div className="main-view"/>;
+        
+    return (
         <div className="main-view">
             {selectedMovie
-                ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                    ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+                    : movies.map((movie, index) => (
+                        <MovieCard key={movie._id} movie={movie} index={index} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
+                    ))
+                }
+            </div>
+        );
+    }
 
-                : movies.map(movie => (
-                <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
-                 ))}</div>
-            );
-        }
-} 
-
+}}
+        
 export default MainView;
