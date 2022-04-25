@@ -21,6 +21,10 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+<<<<<<< Updated upstream
     "@parcel/transformer-sass": "^2.5.0"
+=======
+    "@parcel/transformer-sass": "^2.0.0-rc.0"
+>>>>>>> Stashed changes
   }
 }
