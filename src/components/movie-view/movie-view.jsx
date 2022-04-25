@@ -1,5 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+import { Container, Row, Col, Button } from 'react-bootstrap';
+
+import './movie-view.scss';
 
 export class MovieView extends React.Component {
 
@@ -18,37 +21,58 @@ componentWillUnmount() {
 }
 // should I keep this Code though
 
-    render() {
+    render()  {
+      const { movie, onBackClick } = this.props;
+  
+      return (
+  
+        <Container fluid className="moviesContainer">
+          <Row>
+            <Col>
+              <div className="movie-view">
 
-        const { movie, onBackClick } = this.props;
-        return (
+                <div className="movie-poster">
+                  <img src={movie.ImagePath} crossOrigin="true" />
+                </div>
+                <div className="movie-title">
+                  <span className="title">Title: </span>
+                  <span className="value">{movie.Title}</span>
+                </div>
 
-          <div className="movie-view">
-          <div className="movie-poster">
-            <img src={movie.ImagePath} />
-            </div>
+                <div className="movie-description">
+                  <span className="description">Description: </span>
+                  <span className="value">{movie.Description}</span>
+                </div>
+                <div className="movie-genre">
+                  <span className="genre">Genre: </span>
+                  <span className="value">{movie.Genre.Name}</span>
+                </div>
+                <div className="genre-description">
+                  <span className="genre">Description: </span>
+                  <span className="value">{movie.Genre.Description}</span>
+                </div>
+                <div className="movie-director">
+                  <span className="director">Director: </span>
+                  <span className="value">{movie.Director.Name}</span>
+                </div>
+                <div className="director-bio">
+                  <span className="director">Bio: </span>
+                  <span className="value">{movie.Director.Bio}</span>
+                </div>
 
-            <div className="movie-title">
-              <span className="label">Title: </span>
-              <span className="value">{movie.Title}</span>
-            </div>
-
-            <div className="movie-description">
-              <span className="label">Description: </span>
-              <span className="value">{movie.Description}</span>
-            </div>
-
-            <button onClick={() => { onBackClick(null); }}>Back</button>
-           </div>
-        );
-      }
+                <div className="movie-button-div">
+                  <Button className="movie-button" bg="dark" variant="dark" onClick={() => { onBackClick(null); }}>Back</Button>
+                </div>
+                
+  
+              </div>
+            </Col>
+          </Row>
+          
+         </Container>
+      );
     }
-
-//Adding click event listener / MovieCard 
-//cf MovieCard here props = movie object - Les poupees russes !
-//rendering details about movies (movie.title/descript/img) 
-// MovieView displayed on movieCard within MainView
-
+  }
 
 MovieView.propTypes = {
   movie: PropTypes.shape({
@@ -60,8 +84,7 @@ MovieView.propTypes = {
         }),
         Director: PropTypes.shape({
             Name: PropTypes.string.isRequired,
-            Bio: PropTypes.string.isRequired,
-            Birth: PropTypes.string.isRequired
+            Bio: PropTypes.string.isRequired
         }),
   }).isRequired,
   onBackClick: PropTypes.func.isRequired
