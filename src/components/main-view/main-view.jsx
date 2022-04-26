@@ -1,10 +1,11 @@
-//Main container
+
 import React from 'react';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { RegistrationView } from '../registration-view/registration-view';
 
 import {Navbar, Nav, Container, Row, Col} from 'react-bootstrap/Container';
-import './movie-view.scss'
+import './main-view.scss'
 
 export class MainView extends React.Component {
 

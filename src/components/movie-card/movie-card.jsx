@@ -1,4 +1,4 @@
-//for Movies 
+ 
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
@@ -28,8 +28,5 @@ import './movie-card.scss';
     );
   }
 }
-
->>>>>>> Stashed changes
-
  
 

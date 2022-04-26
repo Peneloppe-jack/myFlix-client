@@ -2,9 +2,11 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "",
-  "default": "src/index.html",
+  "source": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -17,11 +19,12 @@
   },
   "homepage": "https://github.com/Peneloppe-jack/myFlix-client#readme",
   "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^18.1.0",
+    "react-bootstrap": "^2.3.0",
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
-    "@babel/parser": "^7.17.9",
-    "@parcel/transformer-sass": "^2.0.0-rc.0"
+    "@parcel/transformer-sass": "^2.5.0",
+    "parcel": "^2.5.0"
   }
 }

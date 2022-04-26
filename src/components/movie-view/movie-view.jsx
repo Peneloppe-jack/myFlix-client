@@ -72,14 +72,6 @@ componentWillUnmount() {
          </Container>
       );
     }
-<<<<<<< Updated upstream
-
-
-    //Adding click event listener / MovieCard 
-//cf MovieCard here props = movie object - Les poupees russes !
-//rendering details about movies (movie.title/descript/img) 
-// MovieView displayed on movieCard within MainView
-=======
   }
 
 MovieView.propTypes = {
@@ -97,4 +89,3 @@ MovieView.propTypes = {
   }).isRequired,
   onBackClick: PropTypes.func.isRequired
 };
->>>>>>> Stashed changes
