@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
-//import Button from 'react-bootstrap/Button';
+import { Navbar, Nav, Form, Button, Card, Container} from 'react-bootstrap/Button';
 
-// import './login-view.css'
+import './login-view.css'
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
@@ -19,28 +19,57 @@ export function LoginView(props) {
 
 
   return (
-    <Form>
-      <Form.Group controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
-        <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
-      </Form.Group>
+    <Container fluid className="logContainer" >
 
-      <Form.Group controlId="formPassword">
-        <Form.Label>Password:</Form.Label>
-        <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
-      </Form.Group>
-      <Button variant="primary" type="submit" onClick={handleSubmit}>
-        Submit
-      </Button>
-    </Form>
+    <Navbar bg="navColor" variant="dark" expand="lg">
+      <Container fluid>
+      <Navbar.Brand href="#home">myFlix</Navbar.Brand>
+      <Nav className="me-auto">
+      <Nav.Link href="#logout">Login</Nav.Link>
+      </Nav>
+      </Container>
+    </Navbar>
+
+
+    
+    <Card className="loginCard">
+        <Card.Body>
+          <Card.Title className="text-center">Welcome to myFlix ! </Card.Title>
+          <Card.Subtitle className="mb-2 text-muted text-center">Login</Card.Subtitle>
+      
+          <Form >
+            <Form.Group controlId="formUsername">
+              <Form.Label>Username</Form.Label>
+              <Form.Control 
+                type="text" 
+                onChange={e => setUsername(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control 
+                className="mb-3" 
+                type="password" 
+                onChange={e => setPassword(e.target.value)}
+              />
+            </Form.Group>
+
+            <Button className="loginButton" variant="secondary" size="lg" type="submit" onClick={handleSubmit}>
+              Login
+            </Button>
+          </Form>
+        </Card.Body>
+    </Card>
+    </Container>
   );
+    
 }
-
 
   LoginView.propTypes = {
     user: PropTypes.shape({
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
-    }),
+    }).isRequired,
     onLoggedIn: PropTypes.func.isRequired
 };
