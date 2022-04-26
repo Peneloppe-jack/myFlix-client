@@ -5,15 +5,6 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
-<<<<<<< Updated upstream
-    render() {
-        const { movie, onBackClick } = this.props;
-        return (
-          <div className="movie-view">
-            <div className="movie-poster">
-              <img src={movie.ImagePath} />
-            </div>
-=======
 
   keypressCallback(event) {
     console.log(event.key);
@@ -47,7 +38,6 @@ componentWillUnmount() {
                   <span className="title">Title: </span>
                   <span className="value">{movie.Title}</span>
                 </div>
->>>>>>> Stashed changes
 
                 <div className="movie-description">
                   <span className="description">Description: </span>

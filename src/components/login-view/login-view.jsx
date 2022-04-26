@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
@@ -75,4 +73,3 @@ export function LoginView(props) {
     }).isRequired,
     onLoggedIn: PropTypes.func.isRequired
 };
->>>>>>> Stashed changes
