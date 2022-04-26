@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
     DirectorView.propTypes = {
       Director: PropTypes.shape({
