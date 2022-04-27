@@ -34,30 +34,35 @@ setSelectedMovie(newSelectedMovie) {
      this.setState({selectedMovie: newSelectedMovie });
      }
 
+     onRegister(register) {
+        this.setState({ register }); 
+    }
+    
 onLoggedIn(user) {
         this.setState({ user });
     }
 
 render() {
-    const { movies, selectedMovie, user } = this.state;
+    const { movies, selectedMovie, user, register } = this.state;
 
-    if (!user) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
- else {
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-        if (movies.length === 0) return <div className="main-view"/>;
+    if (!register ) return <RegistrationView onRegister={(register) => this.onRegister(register)} />;
+ 
+    if (!user) return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
+   
+    if (movies.length === 0) return <div className="main-view"/>;
         
     return (
         <div className="main-view">
             {selectedMovie
                     ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
                     : movies.map((movie, index) => (
-                        <MovieCard key={movie._id} movie={movie} index={index} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
+                        <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
                     ))
                 }
             </div>
         );
     }
 
-}}
+}
         
 export default MainView;
