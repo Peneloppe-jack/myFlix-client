@@ -69,7 +69,6 @@ return (
     </Col>
     </Row>
   </Container>
-
 );
 }
 
@@ -80,5 +79,5 @@ RegistrationView.propTypes = {
       Password: PropTypes.string.isRequired,
       Email: PropTypes.string.isRequired
   }).isRequired,
-  onRegister: PropTypes.func,isRequired
+  onRegister: PropTypes.func.isRequired
 };
