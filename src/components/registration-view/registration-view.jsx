@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Navbar, Nav, Form, Button, Card, Container, Row, Col } from 'react-bootstrap';
+import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 import './registration-view.scss';
 
 export function RegistrationView(props) {
