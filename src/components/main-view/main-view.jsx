@@ -34,7 +34,7 @@ setSelectedMovie(newSelectedMovie) {
      this.setState({selectedMovie: newSelectedMovie });
      }
 
-     onRegister(register) {
+ onRegister(register) {
         this.setState({ register }); 
     }
     
