@@ -1,24 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 //import { Container, Row, Col, Button } from 'react-bootstrap';
 //import './movie-view.scss';
 
 export class MovieView extends React.Component {
-
-  keypressCallback(event) {
-    console.log(event.key);
-}
-
-//Add Keypress event listener
-componentDidMount() {
-    document.addEventListener('keypress', this.keypressCallback);
-}
-
-//Unmount event listener
-componentWillUnmount() {
-    document.removeEventListener('keypress', this.keypressCallback);
-}
-// should I keep this Code though
 
     render()  {
       const { movie, onBackClick } = this.props;

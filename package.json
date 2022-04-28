@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Peneloppe-jack/myFlix-client#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-bootstrap": "^2.3.1",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.5.0",
-    "parcel": "^2.5.0"
+    "parcel": "^2.5.0",
+    "process": "^0.11.10"
   }
 }
