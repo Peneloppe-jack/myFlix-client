@@ -1,25 +1,35 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
-//import Button from 'react-bootstrap/Button';
-//import Card from 'react-bootstrap/Card';
- //import './movie-card.scss'
+import { Button, Card, CardGroup, CardTitle, CardImg, CardText, Container, Row, Col } from 'react-bootstrap';
+//import { Button } from '../button-view/button-view';
 
-export class MovieCard extends React.Component {
-  render() {
-    const { movie, onMovieClick } = this.props;
-     return (
-        <Card>
-        <Card.Img variant="top" src={movie.ImagePath} />
-        <Card.Body>
-        <Card.Title>{movie.Title}</Card.Title>
-        <Card.Text>{movie.Description}</Card.Text>
-        <Button onClick={() => onMovieClick(movie)} variant="link">Open</Button>
-        </Card.Body>
-        </Card>
-        );
-      }
-    }
+import './movie-card.scss';
 
+    export class MovieCard extends React.Component {
+      render() {
+        const { movie, onMovieClick } = this.props;
+
+    return (
+      <Container className="movieContainer">
+        <Row>
+        <Col>
+          <CardGroup>
+            <Card className="movieCard text-center" >
+            <CardImg className="cardImage" variant="top" src={movie.ImagePath} />
+            <CardBody>
+            <CardTitle>{movie.Title}</CardTitle>
+            <CardText>{movie.Description}</CardText>
+            <Button variant="secondary" onClick={() => onMovieClick(movie)} >More...</Button>
+            </CardBody>
+            </Card>
+            </CardGroup>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+}
     MovieCard.propTypes = {
       movie: PropTypes.shape({
           ImagePath: PropTypes.string.isRequired,

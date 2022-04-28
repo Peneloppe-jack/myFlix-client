@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+//import { Button } from '../button-view/button-view';
 
-//import { Container, Row, Col, Button } from 'react-bootstrap';
-//import './movie-view.scss';
+import './movie-view.scss';
 
 export class MovieView extends React.Component {
-
     render()  {
       const { movie, onBackClick } = this.props;
   

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-//import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
-import  Button from '../button/button';
+import { Form, Button } from 'react-bootstrap';
 
-//import Button from 'react-bootstrap/Button';
-// import './login-view.css'
+////import { Button } from '../button-view/button-view';
+
+import './login-view.css'
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
