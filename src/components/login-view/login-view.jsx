@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 //import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
+import  Button from '../button/button';
 
 //import Button from 'react-bootstrap/Button';
 // import './login-view.css'
@@ -29,7 +30,7 @@ export function LoginView(props) {
         <Form.Label>Password:</Form.Label>
         <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={handleSubmit}>
+      <Button label ="super-button" variant="primary" type="submit" onClick={handleSubmit}>
         Submit
       </Button>
     </Form>
