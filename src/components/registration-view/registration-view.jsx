@@ -8,7 +8,7 @@ export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const [birthday, setBirthday] = useState('');
+    const [Birthday, setBirthday] = useState('');
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -74,7 +74,7 @@ return (
 
 
 RegistrationView.propTypes = {
-register: PropTypes.shape({
+onRegister: PropTypes.shape({
 Username: PropTypes.string.isRequired,
 Password: PropTypes.string.isRequired,
 Email: PropTypes.string.isRequired
