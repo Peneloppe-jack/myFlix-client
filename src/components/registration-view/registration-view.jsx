@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import  Button from '../button/button';
 
 //import Button from 'react-bootstrap/Button';
 //import './registration-view.scss';
@@ -9,6 +10,7 @@ export function RegistrationView(props) {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [birthday, setBirthday] = useState('');
+    const { Button } = '../components/button/button';
  
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -57,8 +59,8 @@ return (
         onChange={(e) => setBirthday(e.target.value)}
         />
       </label>
-      <Button variant="primary" type="submit" onClick={handleSubmit}>
-        Register
+      <Button label ="super-button"  variant="primary" type="submit" onClick={handleSubmit}>
+        Register !
       </Button>
     
     </form>
