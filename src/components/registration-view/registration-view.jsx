@@ -57,8 +57,8 @@ return (
         onChange={(e) => setBirthday(e.target.value)}
         />
       </label>
-      <Button >
-        Submit
+      <Button variant="primary" type="submit" onClick={handleSubmit}>
+        Register
       </Button>
     
     </form>
@@ -68,7 +68,7 @@ return (
 
 
 RegistrationView.propTypes = {
-  newUser: PropTypes.shape({
+  onRegistration: PropTypes.shape({
       Username: PropTypes.string.isRequired,
       Password: PropTypes.string.isRequired,
       Email: PropTypes.string.isRequired

@@ -31,11 +31,16 @@ componentDidMount(){
         });
     }
 
-setSelectedMovie(newSelectedMovie) { 
-     this.setState({selectedMovie: newSelectedMovie });
-     }
 
- onRegister(register) {
+    setSelectedMovie(movie) { 
+        this.setState({selectedMovie: movie });
+        }
+   
+//setSelectedMovie(newSelectedMovie) { 
+    // this.setState({selectedMovie: newSelectedMovie });
+     //}
+
+ onRegistration(register) {
         this.setState({ register }); 
     }
     
@@ -46,7 +51,7 @@ onLoggedIn(user) {
 render() {
     const { movies, selectedMovie, user, register } = this.state;
 
-    if (!register ) return <RegistrationView onRegister={(register) => this.onRegister(register)} />;
+    if (!register ) return <RegistrationView onRegistration={(register) => this.onRegistration(register)} />;
  
     if (!user) return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
    
