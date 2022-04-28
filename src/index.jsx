@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Container from 'react-bootstrap/Container';
-
-import { MainView } from './components/main-view/main-view';
+import { MainView } from "./components/main-view/main-view";
+import { Container } from "react-bootstrap";
 
 import './index.scss';
 
