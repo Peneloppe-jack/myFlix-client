@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from "axios";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 //import { Button } from '../button-view/button-view';
+import { Link } from "react-router-dom";
 
 import './movie-view.scss';
 
@@ -41,7 +43,7 @@ export class MovieView extends React.Component {
       <CardTitle>{genre.Name}</CardTitle>
       <CardText>{genre.Description}</CardText>
 
-      <Link to={`/genres/${movie.Genre.Name}`}>
+      <Link to={`/genre/${movie.Genre.Name}`}>
       <Button variant="link">Genre</Button>
       </Link>
 

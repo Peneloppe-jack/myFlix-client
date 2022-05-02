@@ -1,10 +1,10 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import {Col, Row, Button }from 'react-bootstrap';
+import PropTypes from "prop-types";
+import { Button, Col, Row } from "react-bootstrap";
+//import { BCard, Container, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-import './genre-view.scss';
-
-
+//import './genre-view.scss';
 
 export class GenreView extends React.Component{
   
@@ -31,7 +31,12 @@ export class GenreView extends React.Component{
           <Col>
           
             <Button  onClick={() => { onBackClick(null); } } variant="danger"> Back</Button>
-            
+            <Link to={`/`}>
+              <Button className="custom-btn" type="submit">
+                Back to List
+              </Button>
+            </Link>
+      
           </Col>
         </Row>
         </>
