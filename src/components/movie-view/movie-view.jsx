@@ -10,57 +10,50 @@ export class MovieView extends React.Component {
       const { movie, onBackClick } = this.props;
   
       return (
-  
         <Container fluid className="moviesContainer">
-          <Row>
-            <Col>
-              <div className="movie-view">
-
-                <div className="movie-poster">
-                  <img src={movie.ImagePath} crossOrigin="true" />
-                </div>
-                <div className="movie-title">
-                  <span className="title">Title: </span>
-                  <span className="value">{movie.Title}</span>
-                </div>
-
-                <div className="movie-description">
-                  <span className="description">Description: </span>
-                  <span className="value">{movie.Description}</span>
-                </div>
-                <div className="movie-genre">
-                  <span className="genre">Genre: </span>
-                  <span className="value">{movie.Genre.Name}</span>
-                </div>
-                <div className="genre-description">
-                  <span className="genre">Description: </span>
-                  <span className="value">{movie.Genre.Description}</span>
-                </div>
-                <div className="movie-director">
-                  <span className="director">Director: </span>
-                  <span className="value">{movie.Director.Name}</span>
-                </div>
-                <div className="director-bio">
-                  <span className="director">Bio: </span>
-                  <span className="value">{movie.Director.Bio}</span>
-                </div>
-
-                <div className="movie-button-div">
-                  <Button className="movie-button" bg="dark" variant="dark" onClick={() => { onBackClick(null); }}>Back</Button>
-                </div>
-                
+   <Card className = "movie-view"> 
   
-              </div>
-            </Col>
-          </Row>
-          
-         </Container>
-      );
-    }
+      <CardBody className="movie">
+      <CardImg className="movie-poster" variant="top" src={movie.ImagePath} />
+
+        <CardTitle>{movie.Title}</CardTitle>
+        <CardText>{movie.Description}</CardText>
+
+        <Link to={`/movies/${movie._id}`}>
+          <Button variant="link">Open</Button>
+        </Link>
+      </CardBody>
+      
+      <CardBody className="director">
+
+        <CardTitle>{director.Name}</CardTitle>
+        <CardText>{director.Bio}</CardText>
+
+        <Link to={`/directors/${movie.Director.Name}`}>
+        <Button variant="link">Director</Button>
+        </Link>
+
+      </CardBody>
+  
+
+        <CardBody className="genre">
+
+      <CardTitle>{genre.Name}</CardTitle>
+      <CardText>{genre.Description}</CardText>
+
+      <Link to={`/genres/${movie.Genre.Name}`}>
+      <Button variant="link">Genre</Button>
+      </Link>
+
+      </CardBody>
+      </Card>  
+      </Container>
+  );
   }
+}
 
 MovieView.propTypes = {
-  movie: PropTypes.shape({
+  movies: PropTypes.shape({
       ImagePath: PropTypes.string.isRequired,
       Title: PropTypes.string.isRequired,
       Description: PropTypes.string.isRequired,
@@ -74,3 +67,5 @@ MovieView.propTypes = {
   }).isRequired,
   onBackClick: PropTypes.func.isRequired
 };
+
+export default MovieView;

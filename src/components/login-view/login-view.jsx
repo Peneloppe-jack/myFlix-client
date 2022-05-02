@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { Form, Button } from 'react-bootstrap';
-
-////import { Button } from '../button-view/button-view';
+import { Container, Navbar, Nav, Form, FormGroup, FormLabel, FormControl, Button } from 'react-bootstrap';
+//import { Button } from '../button-view/button-view';
 
 import './login-view.scss'
 
@@ -56,15 +55,17 @@ const handleSubmit = (e) => {
 
   return (
     <Form>
-      <Form.Group controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
-        <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
-      </Form.Group>
+      
+      <FormGroup controlId="formUsername">
+        <FormLabel>Username:</FormLabel>
+        <FormControl type="text" onChange={e => setUsername(e.target.value)} />
+      </FormGroup>
 
-      <Form.Group controlId="formPassword">
-        <Form.Label>Password:</Form.Label>
-        <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
-      </Form.Group>
+      <FormGroup controlId="formPassword">
+        <FormLabel>Password:</FormLabel>
+        <FormControl type="password" onChange={e => setPassword(e.target.value)} />
+      </FormGroup>
+
       <Button label ="super-button" variant="primary" type="submit" onClick={handleSubmit}>
         Submit
       </Button>
@@ -72,11 +73,7 @@ const handleSubmit = (e) => {
   );
 }
 
-
-  LoginView.propTypes = {
-    user: PropTypes.shape({
-    Username: PropTypes.string.isRequired,
-    Password: PropTypes.string.isRequired,
-    }).isRequired,
-    onLoggedIn: PropTypes.func.isRequired
+  LoginView.propTypes = {   
+    onLoggedIn: PropTypes.func.isRequired,
 };
+
