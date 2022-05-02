@@ -2,6 +2,8 @@ import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import './navbar-view.scss'
+
 export function Navbar() {
   let user = localStorage.getItem("user");
 
@@ -40,14 +42,13 @@ export function Navbar() {
               Logout
             </Nav.Link>
             <NavDropdown title="My Account" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to={`/users/${user}`}>
-                Profile
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Privacy</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Terms and Conditions
-              </NavDropdown.Item>
+              
+              <NavDropdown.Item as={Link} to={`/users/${user}`}> Profile</NavDropdown.Item>
+
+              <NavDropdown.Item href="#ome">Movies</NavDropdown.Item>
+              
+              <NavDropdown.Item href="#Logout"> Logout </NavDropdown.Item>
+
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

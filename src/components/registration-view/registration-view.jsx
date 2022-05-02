@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Container, Navbar, Nav, Form, FormGroup, FormLabel, FormControl, Button } from 'react-bootstrap';
 //import { Button } from '../button-view/button-view';
 
-import './registration-view.scss';
+import './registration-view.scss'
 
 export function RegistrationView(props) {
   

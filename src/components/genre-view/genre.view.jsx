@@ -4,7 +4,7 @@ import { Button, Col, Row } from "react-bootstrap";
 //import { BCard, Container, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-//import './genre-view.scss';
+import './genre-view.scss'
 
 export class GenreView extends React.Component{
   

@@ -8,7 +8,6 @@ import Col from 'react-bootstrap/Col';
 import { Container, Navbar, Nav, Form, FormGroup, FormLabel, FormControl, Button } from 'react-bootstrap';
 
 //import { Button } from '../button-view/button-view';
-//import "/.main-view.scss";
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -19,6 +18,7 @@ import { DirectorView } from "../director-view/director-view";
 import { ProfileView } from "../profile-view/profile-view";
 import { Navbar } from "../navbar-view/navbar-view";
 
+import './main-view.scss'
 
 export class MainView extends React.Component {
 

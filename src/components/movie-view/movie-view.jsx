@@ -5,7 +5,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 //import { Button } from '../button-view/button-view';
 import { Link } from "react-router-dom";
 
-import './movie-view.scss';
+import './movie-view.scss'
 
 export class MovieView extends React.Component {
     render()  {
