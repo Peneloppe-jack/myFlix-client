@@ -1,58 +1,51 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Container, Nav, Navbar,Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
+import './navbar-view.scss';
 
-import './navbar-view.scss'
-
-export function Navbar() {
-  let user = localStorage.getItem("user");
+export function NavbarView({user}) {
 
   const onLoggedOut = () => {
     localStorage.clear();
     window.open("/", "_self");
-  };
+  }
 
   const isAuth = () => {
-    if (typeof window == "undefined") {
+    if(typeof window == "undefined") {
       return false;
     }
-    if (localStorage.getItem("token")) {
+    if(localStorage.getItem("token")) {
       return localStorage.getItem("token");
     } else {
       return false;
     }
   };
 
+
   return (
-    <Navbar expand="md">
-      <Navbar.Brand as={Link} to={"/"}>
-        Welcome to myFlix
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
-      {isAuth() && (
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link to={`/`}>Hi, {user}</Nav.Link>
-            <Nav.Link
-              onClick={() => {
-                onLoggedOut();
-              }}
-            >
-              Logout
-            </Nav.Link>
-            <NavDropdown title="My Account" id="basic-nav-dropdown">
-              
-              <NavDropdown.Item as={Link} to={`/users/${user}`}> Profile</NavDropdown.Item>
-
-              <NavDropdown.Item href="#ome">Movies</NavDropdown.Item>
-              
-              <NavDropdown.Item href="#Logout"> Logout </NavDropdown.Item>
-
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      )}
+    <Navbar className="main-nav" sticky="top" bg="dark" expand="lg" variant="dark">
+        <Container>
+          <Navbar.Brand className="navbar-logo"
+          href="/">myFlix</Navbar.Brand>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="ml-auto">
+                  {isAuth() && (
+                      <Nav.Link as={Link} to='/users/username' >{user}</Nav.Link>
+                  )}
+                  {isAuth() && (
+                    <Button variant="link" onClick={() => { onLoggedOut() }}>Logout</Button>
+                  )}
+                  {!isAuth() && (
+                      <Nav.Link href="/">Sign-in</Nav.Link>
+                  )}
+                  {!isAuth() && (
+                      <Nav.Link href="/register">Sign-up</Nav.Link>
+                  )}
+                </Nav>
+              </Navbar.Collapse>
+        </Container>
     </Navbar>
   );
 }
