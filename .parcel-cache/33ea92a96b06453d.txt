@@ -34,7 +34,7 @@
 64C:\Users\JC\myFlix-client\node_modules\tiny-warning\src\index.js132071083860000000 0
 72C:\Users\JC\myFlix-client\node_modules\react\cjs\react.production.min.js121436361000000000 0
 79C:\Users\JC\myFlix-client\node_modules\caniuse-lite\data\features\web-serial.js121436361000000000 0
-30C:\Users\JC\myFlix-client\dist132960187940159370 1
+30C:\Users\JC\myFlix-client\dist132960223313711122 1
 45C:\Users\JC\myFlix-client\node_modules\base-x132956470439840883 1
 59C:\Users\JC\myFlix-client\node_modules\classnames\bind.d.ts121436361000000000 0
 51C:\Users\JC\myFlix-client\node_modules\svgo\LICENSE121436361000000000 0
@@ -103,7 +103,7 @@
 72C:\Users\JC\myFlix-client\node_modules\react-bootstrap\esm\CardHeader.js121436361000000000 0
 74C:\Users\JC\myFlix-client\node_modules\whatwg-url\lib\url-state-machine.js121436361000000000 0
 75C:\Users\JC\myFlix-client\node_modules\@parcel\core\test\serializer.test.js121436361000000000 0
-80C:\Users\JC\myFlix-client\src\components\registration-view\registration-view.jsx132960186597679326 0
+80C:\Users\JC\myFlix-client\src\components\registration-view\registration-view.jsx132960223304655323 0
 63C:\Users\JC\myFlix-client\node_modules\@babel\highlight\LICENSE121012626000000000 0
 77C:\Users\JC\myFlix-client\node_modules\@restart\hooks\useIntersectionObserver132956470271582185 1
 69C:\Users\JC\myFlix-client\node_modules\@restart\ui\cjs\useWindow.d.ts121436361000000000 0
@@ -282,10 +282,10 @@
 70C:\Users\JC\myFlix-client\node_modules\uncontrollable\lib\esm\index.js121436361000000000 0
 70C:\Users\JC\myFlix-client\src\components\profile-view\profile-view.jsx132960186597659381 0
 59C:\Users\JC\myFlix-client\node_modules\csstype\package.json132956470429576850 0
-68C:\Users\JC\myFlix-client\src\components\navbar-view\navbar-view.jsx132960190598001541 0
+68C:\Users\JC\myFlix-client\src\components\navbar-view\navbar-view.jsx132960207352817159 0
 47C:\Users\JC\myFlix-client\node_modules\anymatch132956471044021326 1
 73C:\Users\JC\myFlix-client\node_modules\bootstrap\js\dist\scrollspy.js.map121436361000000000 0
-64C:\Users\JC\myFlix-client\src\components\main-view\main-view.jsx132960186597400081 0
+64C:\Users\JC\myFlix-client\src\components\main-view\main-view.jsx132960226933123054 0
 91C:\Users\JC\myFlix-client\node_modules\@babel\highlight\node_modules\supports-color\license131408182550000000 0
 75C:\Users\JC\myFlix-client\node_modules\react-bootstrap\cjs\ThemeProvider.js121436361000000000 0
 52C:\Users\JC\myFlix-client\node_modules\scheduler\cjs132956470274943191 1
@@ -368,7 +368,7 @@
 74C:\Users\JC\myFlix-client\node_modules\svgo\lib\svgo\css-select-adapter.js121436361000000000 0
 65C:\Users\JC\myFlix-client\node_modules\css-tree\lib\syntax\pseudo132956470358888724 1
 70C:\Users\JC\myFlix-client\node_modules\css-tree\lib\syntax\node\Url.js121436361000000000 0
-48C:\Users\JC\myFlix-client\dist\index.b4b6dfad.js132960187940009767 0
+48C:\Users\JC\myFlix-client\dist\index.b4b6dfad.js132960223312205144 0
 71C:\Users\JC\myFlix-client\node_modules\@restart\hooks\useResizeObserver132956470301681692 1
 79C:\Users\JC\myFlix-client\node_modules\react-bootstrap\cjs\ElementChildren.d.ts121436361000000000 0
 49C:\Users\JC\myFlix-client\node_modules\.bin\json5132956470445588705 0
@@ -2390,7 +2390,7 @@
 70C:\Users\JC\myFlix-client\node_modules\caniuse-lite\data\regions\GD.js121436361000000000 0
 95C:\Users\JC\myFlix-client\node_modules\react-dom\umd\react-dom-server.browser.production.min.js121436361000000000 0
 72C:\Users\JC\myFlix-client\node_modules\react-router-dom\es\withRouter.js121436361000000000 0
-53C:\Users\JC\myFlix-client\dist\index.3bb28fe2.css.map132960187939401396 0
+53C:\Users\JC\myFlix-client\dist\index.3bb28fe2.css.map132960217152810542 0
 83C:\Users\JC\myFlix-client\node_modules\react-router-dom\cjs\react-router-dom.min.js121436361000000000 0
 87C:\Users\JC\myFlix-client\node_modules\react-router-dom\cjs\react-router-dom.min.js.map121436361000000000 0
 79C:\Users\JC\myFlix-client\node_modules\react-bootstrap\NavDropdown\package.json121436361000000000 0
@@ -6622,7 +6622,7 @@
 75C:\Users\JC\myFlix-client\node_modules\@parcel\utils\test\sourcemap.test.js121436361000000000 0
 74C:\Users\JC\myFlix-client\node_modules\@parcel\utils\test\throttle.test.js121436361000000000 0
 73C:\Users\JC\myFlix-client\node_modules\@parcel\utils\test\urlJoin.test.js121436361000000000 0
-49C:\Users\JC\myFlix-client\dist\index.3bb28fe2.css132960187939371482 0
+49C:\Users\JC\myFlix-client\dist\index.3bb28fe2.css132960217152650978 0
 73C:\Users\JC\myFlix-client\node_modules\@parcel\utils\test\input\sourcemap132956470357043661 1
 88C:\Users\JC\myFlix-client\node_modules\@parcel\utils\test\input\sourcemap\source-root.js121436361000000000 0
 92C:\Users\JC\myFlix-client\node_modules\@parcel\utils\test\input\sourcemap\source-root.js.map121436361000000000 0
@@ -7317,6 +7317,6 @@
 52C:\Users\JC\myFlix-client\node_modules\.bin\svgo.ps1132956470446675789 0
 54C:\Users\JC\myFlix-client\node_modules\.bin\terser.cmd132956470446815417 0
 54C:\Users\JC\myFlix-client\node_modules\.bin\terser.ps1132956470446815417 0
-52C:\Users\JC\myFlix-client\dist\index.b4b6dfad.js.map132960187940139422 0
+52C:\Users\JC\myFlix-client\dist\index.b4b6dfad.js.map132960223312484396 0
 53C:\Users\JC\myFlix-client\dist\index.e3f97e84.css.map132960186656471063 0
-41C:\Users\JC\myFlix-client\dist\index.html132960186657472653 0
+41C:\Users\JC\myFlix-client\dist\index.html132960217153369048 0

@@ -24,13 +24,13 @@ export function NavbarView({user}) {
 
 
   return (
-    <Navbar className="main-nav" sticky="top" bg="dark" expand="lg" variant="dark">
-        <Container>
+    <Navbar className="main-nav" sticky="top" bg="dark" expand="md" variant="dark">
+        <Container fluid>
           <Navbar.Brand className="navbar-logo"
-          href="/">myFlix</Navbar.Brand>
+          href="/">Welcome to myFlix !</Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="ml-auto">
+                <Nav className="md-auto">
                   {isAuth() && (
                       <Nav.Link as={Link} to='/users/username' >{user}</Nav.Link>
                   )}
