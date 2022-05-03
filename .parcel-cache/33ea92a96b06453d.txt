@@ -282,7 +282,7 @@
 70C:\Users\JC\myFlix-client\node_modules\uncontrollable\lib\esm\index.js121436361000000000 0
 70C:\Users\JC\myFlix-client\src\components\profile-view\profile-view.jsx132960186597659381 0
 59C:\Users\JC\myFlix-client\node_modules\csstype\package.json132956470429576850 0
-68C:\Users\JC\myFlix-client\src\components\navbar-view\navbar-view.jsx132960187484319407 0
+68C:\Users\JC\myFlix-client\src\components\navbar-view\navbar-view.jsx132960190598001541 0
 47C:\Users\JC\myFlix-client\node_modules\anymatch132956471044021326 1
 73C:\Users\JC\myFlix-client\node_modules\bootstrap\js\dist\scrollspy.js.map121436361000000000 0
 64C:\Users\JC\myFlix-client\src\components\main-view\main-view.jsx132960186597400081 0
