@@ -76,8 +76,9 @@ getMovies(token) {
   }
     render() {
 
-      const { movies, user } = this.state;
-      
+      let { movies } = this.props;
+      let { user } = this.state;
+
       return (
         <Router>
         <NavbarView user={user} />
@@ -135,17 +136,25 @@ getMovies(token) {
                 <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
-  
-            <Route path='/users/:username'
-             render={({history, match}) => {
-            if(!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-            if(movies.length === 0) return <div className="main-view" />
-            return<Col>
-            
-            <ProfileView history={history} movies={movies} user={user} />
+
+
+           <Route exact path="/profile" render={({ history }) => {
+             if (!user) { return ( <Col><LoginView onLoggedIn={user => this.onLoggedIn(user)} /></Col>);}
+             if(movies.length === 0) return <div className="main-view" />;
+             return 
+              <Col md={8}>
+                  <ProfileView movies={movies} onBackClick={() => history.goBack()} />
+              </Col>
+                                  
+           }} />
+
+            <Route path={`/users/${user}`} render={({ history }) => {
+            if (!user) return <Redirect to="/" />
+            return <Col>
+            <ProfileView user={user}
+             onBackClick={() => history.goBack()} />
             </Col>
-          }} />
-  
+             }} />
            </Row>
           </Router> 
             
