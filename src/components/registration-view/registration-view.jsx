@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import PropTypes from 'prop-types';
 
-import {Form, Button, Card, Container, Col, Row} from 'react-bootstrap';
+import { CardGroup, Form, Button, Card, Container, Col, Row} from 'react-bootstrap';
 
 import './registration-view.scss';
 import { Link } from "react-router-dom";
@@ -60,7 +60,7 @@ export function RegistrationView(props) {
     .then(response => {
       const data = response.data; 
       console.log(data);
-      alert('Success! Please Login.')
+      alert('Registration successful! Please Login.')
       window.open('/', '_self');
       //The second argument '_self' is necessary so that the page will 
       //open in the current tab
@@ -72,13 +72,16 @@ export function RegistrationView(props) {
   }
 };
   return(
+
     <Container>
+
       <Row>
-        <Col med={4}> 
-         
-           <Card className="bg-light text-black" border='danger' style={{marginTop: 100, marginBottom: 50, borderRadius: 20}}>
-            <Card.Body>
-             <Card.Title style={{textAlign: 'center'}}>Please Register</Card.Title>
+      <Col med={4}> 
+          <CardGroup>
+          <Card className="registerCard bg-light text-black" border='danger' style={{ borderRadius: 20}}>
+          <Card.Body>
+            
+            <Card.Title className="RegisterCardTitle" style={{textAlign: 'center'}}>Please Register</Card.Title>
              <Form className="registration-border">
                <Form.Group controlId="formUsername" className="reg-form-inputs">
                  <Form.Label>Username:</Form.Label>
@@ -133,11 +136,11 @@ export function RegistrationView(props) {
                <p>Already registered <Link to={'/'}>Sign In</Link> here</p>
 
              </Form>
+
             </Card.Body>
-           </Card>
-           
-          
-        </Col>
+          </Card>
+          </CardGroup>
+      </Col>
       </Row>
     </Container>
 
@@ -150,8 +153,8 @@ export function RegistrationView(props) {
       Password: PropTypes.string.isRequired,
       Email: PropTypes.string.isRequired,
       Birthday: PropTypes.string.isRequired,
-    })
-    
+    }), 
   };
   
 //this register prop !!
+//but I added today the line onRegister

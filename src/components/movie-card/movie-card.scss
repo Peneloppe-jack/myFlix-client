@@ -2,7 +2,8 @@
 .movieContainer{
     display: inline-block;
   }
-  
+  /*<Card className=" bg-light text-black" border='danger' style={{ width: '20rem', height: '20rem',margin: '.5rem' }}> */
+  /*<Card.Img variant="top" style={{width: '8rem', height: '12rem'}} src={movie.ImagePath} crossOrigin="anonymous" */
   .movieCard {
     width: 100%;
     margin: 20px;
