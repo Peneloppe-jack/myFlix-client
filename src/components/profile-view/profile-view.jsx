@@ -156,9 +156,19 @@ export class ProfileView extends React.Component {
 <Container>
     <Row>
     <Col>
-        <Card>
+
+            <Card ClassName = "UserInfo" col sx= {12} sm={4} >
+            <Card.Body>
+             <Card.Title Your Info>
+             <UserInfo Name = {user.Userame} email = {user.Email} />  
+             </Card.Title>    
+            </Card.Body>
+
+            </Card>
+
+        <Card className= "UpdateCard"col sx= {12} sm={8}>
         <Card.Body>
-        <Card.Title>Profile</Card.Title>
+        <Card.Title>Update your Info </Card.Title>
         <Form 
             className="update-form"
             onSubmit={(e) => 
@@ -213,7 +223,7 @@ export class ProfileView extends React.Component {
                         type="date"
                         name="Birthday"
                         value={Birthday}
-                        onChange={(e) => this.setBirthdaye(e.target.value)}
+                        onChange={(e) => this.setBirthday(e.target.value)}
                         required
                     />
                 </FormGroup>
@@ -229,7 +239,7 @@ export class ProfileView extends React.Component {
 
         <Row>
         <Col>
-            <Card>
+            <Card className ="FavMov">
             <Card.Body>
             {FavoriteMovies.length === 0 && (
                 <div className="text-center">No Favorite movies</div>
@@ -239,8 +249,8 @@ export class ProfileView extends React.Component {
             if (movie._id === FavoriteMovies.find((fav) => fav === movie._id)
             ) {
             return (
-            <Card className="FavoriteMovies" key={movie._id} >
-                <Card.Img className="FavoriteMovies-image" variant="top"src={movie.ImagePath}
+            <Card className="FavMovView" key={movie._id} >
+                <Card.Img className="FavMovImg" variant="top"src={movie.ImagePath}
             />
             <Card.Body>
 
