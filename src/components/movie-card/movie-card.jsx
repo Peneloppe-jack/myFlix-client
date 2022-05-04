@@ -11,7 +11,7 @@ import './movie-card.scss';
 export class MovieCard extends React.Component {
 
   render() {
-    const { movie } = this.props;
+    const { movie, onMovieClick } = this.props;
 
     return ( 
       <CardGroup>
