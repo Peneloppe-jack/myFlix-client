@@ -13,7 +13,6 @@ export class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
 
-    return ( 
       <CardGroup >
       <Card className="bg-light text-black" border='danger' style={{ width: '20rem', height: '20rem',margin: '.5rem' }}>
       <Card.Img  variant="top" src={movie.ImagePath} crossOrigin="true" style={{width: '8rem', height: '12rem'}}/>
@@ -25,9 +24,9 @@ export class MovieCard extends React.Component {
         </Card.Body>
       </Card>
       </CardGroup>
-    ); 
+  }; 
   }   
-}
+
 
 MovieCard.propTypes = {
 
