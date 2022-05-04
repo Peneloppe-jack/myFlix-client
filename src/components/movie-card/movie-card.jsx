@@ -1,31 +1,29 @@
-import React from "react";  
+import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
-import { Card, CardGroup, Container, Col, Row }  from 'react-bootstrap';
-
-import { Link } from 'react-router-dom';
-
+import Card from 'react-bootstrap/Card';
 import './movie-card.scss';
 
+import { Link } from "react-router-dom";
 
 export class MovieCard extends React.Component {
-
   render() {
     const { movie } = this.props;
 
-      <CardGroup >
-      <Card className="bg-light text-black" border='danger' style={{ width: '20rem', height: '20rem',margin: '.5rem' }}>
-      <Card.Img  variant="top" src={movie.ImagePath} crossOrigin="true" style={{width: '8rem', height: '12rem'}}/>
+    return (
+      <Card className = "movieCard">
+        <Card.Img className = "cardImage" variant="top" src={movie.ImageURL} />
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
+          <Card.Text>{movie.Description}</Card.Text>
           <Link to={`/movies/${movie._id}`}>
-          <Button variant="link">More details</Button>
+            <Button variant="link">Open</Button>
           </Link>
         </Card.Body>
       </Card>
-      </CardGroup>
-  }; 
-  }   
+    );
+  }
+}
 
 
 MovieCard.propTypes = {

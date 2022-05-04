@@ -27,12 +27,15 @@ export function NavbarView({user}) {
 
     <Container>
 
-          <Navbar.Brand className="navbar-logo" href="/"> Welcome to myFlix !</Navbar.Brand>
+          <Navbar.Brand className="#home" href="/"> Welcome to myFlix !</Navbar.Brand>
 
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
 
+                {isAuth() && (
+                  <Nav.Link href="#home">Movies</Nav.Link>
+                )}
                   {isAuth() && (
                       <Nav.Link href={`/users/${user}`}> Profile </Nav.Link>
                   )}
