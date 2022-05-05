@@ -11,16 +11,17 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card className = "movieCard">
-        <Card.Img className = "cardImage" variant="top" src={movie.ImageURL} />
-        <Card.Body>
-          <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text>{movie.Description}</Card.Text>
-          <Link to={`/movies/${movie._id}`}>
-            <Button variant="link">Open</Button>
-          </Link>
+    <CardGroup >
+    <Card className="bg-light text-black" border='danger' style={{ width: '20rem', height: '20rem',margin: '.5rem' }}>
+    <Card.Img  variant="top" src={movie.ImageURL} crossOrigin="true" style={{width: '8rem', height: '12rem'}}/>
+      <Card.Body>
+        <Card.Title>{movie.Title}</Card.Title>
+        <Link to={`/movies/${movie._id}`}>
+        <Button variant="link">More details</Button>
+        </Link>
         </Card.Body>
       </Card>
+      </CardGroup>
     );
   }
 }
@@ -30,7 +31,7 @@ MovieCard.propTypes = {
 
   movie: PropTypes.shape({
     Title: PropTypes.string.isRequired,
-    ImagePath: PropTypes.string.isRequired,
+    ImageURL: PropTypes.string.isRequired,
   }).isRequired,
 };
 export default MovieCard;
