@@ -21,26 +21,35 @@ export function NavbarView({user}) {
     }
   };
 
-
+  
   return (
+ 
+
+    <Container fluid>
     <Navbar className="main-nav" sticky="top" bg="navColor" expand="lg">
+    <Navbar.Brand className="navbar-logo" href="/"> Welcome to myFlix !</Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
 
-      <Container fluid>
+              <Nav className="me-auto">
+              {isAuth() && (
+              <Nav.Link href="/profile">Profile</Nav.Link>
+              )}
+              {isAuth() && (
+                <Button variant="link" onClick={() => { onLoggedOut() }}>Logout</Button>
+                )}
+                {!isAuth() && (
+              <Nav.Link href="/">Sign in</Nav.Link>
+              )}
+                  {!isAuth() && (
+              <Nav.Link href="/register">Sign up</Nav.Link>
+              )}
 
-          <Navbar.Brand className="#home" href="/"> Welcome to myFlix !</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Nav className="me-auto">
-                <Nav.Link href="#home">Movies</Nav.Link>
-                <Nav.Link href="#user">Profile</Nav.Link>
-                <Nav.Link href="#login">Sign in</Nav.Link>
-                <Nav.Link href="#register">Sign up</Nav.Link>
-                </Nav>
-             
-        </Container>
-    </Navbar>
-  );
+              </Nav>
+            
+      </Navbar.Collapse>
+      </Navbar>
+      </Container>
+
+);
 }
-
-
-
-

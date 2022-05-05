@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Container, Navbar, Nav, Form, FormGroup, FormLabel, FormControl, Button } from 'react-bootstrap';
+
 
 //import { Button } from '../button-view/button-view';
 
@@ -95,13 +95,13 @@ render() {
       <NavbarView user={user} />
       </Row>
 
-      <Row className="main-view justify-content-md-center">
+      <Row className="main-view flex">
 
         <Route exact path="/" render={() => {
             if (!user) return <Col><LoginView onLoggedIn={(user) => this.onLoggedIn(user)} /> </Col>
             if (movies.length === 0) return <div className="main-view" />;
             return movies.map((m) => (
-              <Col md={3} key={m._id}> <MovieCard movie={m} /></Col>
+              <Col> <MovieCard movie={m} /></Col>
             ));
           }}
         />
@@ -131,7 +131,7 @@ render() {
               return <Row><Col><LoginView onLoggedIn={(user) => this.onLoggedIn(user)} /></Col></Row>
             if (movies.length === 0) return <div className="main-view" />;
             return (
-              <Col md={8}> <GenreView genre={movies.find((m) => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()}/>
+              <Col> <GenreView genre={movies.find((m) => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()}/>
               </Col>
             );
           }}
@@ -144,7 +144,7 @@ render() {
             if (movies.length === 0) return <div className="main-view" />;
 
             return (
-              <Col md={8}> <DirectorView director={ movies.find((m) => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
+              <Col> <DirectorView director={ movies.find((m) => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
               </Col>
             );
           }}
@@ -156,8 +156,8 @@ render() {
             </Col>
             }
             return (
-            <Col md={8}><ProfileView movies={movies} onBackClick={() => history.goBack()} />
-            </Col>
+              <Col> <ProfileView movies={movies} onBackClick={() => history.goBack()} /> </Col>
+           
             );
              }} />
 
