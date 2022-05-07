@@ -20,7 +20,7 @@ export class MovieCard extends React.Component {
         </Link>
         </Card.Body>
       </Card>
-    
+
     );
   }
 }

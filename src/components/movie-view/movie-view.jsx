@@ -36,6 +36,7 @@ return (
                   </Card.Body>
               </Card>
               <Button id="movie-view-button" onClick={() => { onBackClick(); }}>Back</Button>
+              <Button id="movie-view-button" onClick={() => { }}>Add to favorites</Button>
      </Col>
     </Row>
     </Container>
