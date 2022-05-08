@@ -3,6 +3,11 @@
     box-sizing: border-box;
   }
   
+  .bg-navColor{
+    background: #073763;
+    width: 100%;
+    display: inline;
+  }
   .main-view {
     font-family: 'Lora Sans', sans-serif;
     background: #073763;
@@ -10,6 +15,4 @@
     display: inline-block;
   }
   
-  .bg-navColor{
-    background: #000;
-  }
+  

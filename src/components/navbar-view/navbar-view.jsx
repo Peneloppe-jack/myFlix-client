@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Nav, Navbar,Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './navbar-view.scss';
 
@@ -24,15 +23,15 @@ export function NavbarView({user}) {
 
 
   return (
-    <Navbar className="main-nav" sticky="top" bg="light-blue" expand="md" variant="dark">
+    <Navbar className="main-nav" sticky="top" bg="light-blue" expand="lg" variant="dark">
         <Container fluid>
           <Navbar.Brand className="navbar-logo"
           href="/">Welcome to myFlix !</Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="md-auto">
+                <Nav className="ml-auto">
                   {isAuth() && (
-                      <Nav.Link as={Link} to='/users/username' >{user}</Nav.Link>
+                      <Nav.Link as={Link} to="/profile" >{user}</Nav.Link>
                   )}
                   {isAuth() && (
                     <Button variant="link" onClick={() => { onLoggedOut() }}>Logout</Button>

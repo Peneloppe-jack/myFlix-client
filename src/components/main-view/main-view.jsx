@@ -1,15 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { setMovies } from '../../actions/actions';
 
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
-import { Row, Col } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 //import { Button } from '../button-view/button-view';
 
-import MoviesList from '../movies-list/movies-list';
 //import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
@@ -21,58 +20,75 @@ import { NavbarView } from "../navbar-view/navbar-view";
 
 import './main-view.scss'
 
-    class MainView extends React.Component {
-      constructor() {
-        super();
-        this.state = {
-          user: null
-        };
-      }
+export class MainView extends React.Component {
 
-  getMovies(token) {
-      axios.get('https://mysterious-wildwood-desperado.herokuapp.com/movies', {
-        headers: { Authorization:`Bearer ${token}`}
-      })
-      .then((response) => {
-        this.props.setMovies(response.data);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      }
+  constructor() {
+    super();
 
-    componentDidMount() {
-      let accessToken = localStorage.getItem("token");
-      if (accessToken !== null) {
-        this.setState({
-          user: localStorage.getItem("user"),
-        });
-        this.getMovies(accessToken);
-      }
-    }
+    this.state = {
+      movies: [],
+      user: null
+    };
+  }
 
-    onLoggedIn(authData) {
-      console.log(authData);
+
+getMovies(token) {
+    axios.get('https://mysterious-wildwood-desperado.herokuapp.com/movies', {
+      headers: { Authorization:`Bearer ${token}`}
+    })
+    .then((response) => {
       this.setState({
-        user: authData.user.username,
+        movies: response.data,
       });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+componentDidMount() {
+  axios.get('https://mysterious-wildwood-desperado.herokuapp.com/movies')
+  .then((response) => {
+    this.setState({
+      movies: response.data,
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}
 
-      localStorage.setItem("token", authData.token);
-      localStorage.setItem("user", authData.user.username);
-      this.getMovies(authData.token);
-    }
 
-      onLoggedOut() {
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-        this.setState({
-          user: null,
-        });
-      }
+componentDidMount() {
+  let accessToken = localStorage.getItem('token');
+  if (accessToken !== null) {
+      this.setState({
+          user: localStorage.getItem('user')
+      });
+      this.getMovies(accessToken);
+  }
+}
 
-    render() {
-      let { movies } = this.props;
-      let { user } = this.state;
+onLoggedIn(authData) {
+  console.log(authData);
+  this.setState({
+    user: authData.user.Username,
+  });
+  localStorage.setItem("token", authData.token);
+  localStorage.setItem("user", authData.user.Username);
+  this.getMovies(authData.token);
+}
+
+onLoggedOut() {
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+  this.setState({
+    user: null,
+  });
+}
+
+
+render() {
+  const { movies, user } = this.state;
 
   return (
     <Router>
