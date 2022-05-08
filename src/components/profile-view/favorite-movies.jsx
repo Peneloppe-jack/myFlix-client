@@ -20,7 +20,7 @@ export function FavoriteMovies({favoriteMoviesList, removeFav}) {
                 <Card.Body>
                   <Card.Title>{movie.Title}</Card.Title>
                   
-                  <Button variant="outline-danger" onClick={() => removeFav(movie._id)}>Remove from Favorites</Button>
+                  <Button variant="outline-danger" onClick={() => removeFav(movie._id)}>Remove from List</Button>
                   <Link to={`/movies/${movie._id}`}>
                   <Button variant="danger">Details</Button>
                   </Link>
