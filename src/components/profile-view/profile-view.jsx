@@ -4,11 +4,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import {  Button, Col, Row, Card, Container,NavLink } from "react-bootstrap";
 
-//import { UserData } from "../user-data/user-data;
-//import { UpdateUser } from "../updated-user/updated-user;
-//import { FavoriteMovies } from "../favorite-movies/favorites-movies;
 
-//import './profile-view.scss';
+import './profile-view.scss';
 
 import {UserData} from './user-data';
 import {UpdatedUser} from './updated-user';
