@@ -6,16 +6,16 @@ export function UserData(props) {
   return (
     <Col lg={12}>
       <Row>
-        <Card className="bg-light text-black" border='danger' style={{ textAlign: 'center', marginTop: 20 }}>
-      
-          <Card.Title style={{marginTop: 10}} >Profile Card</Card.Title>
-          <Card.Body className="bg-light text-black" border='danger' style={{ textAlign: 'left', marginTop: 20 }}>
+        <Card className="Profile Info" style={{ textAlign: 'left'}} >
+          <Card.Title >Info Profile</Card.Title>
+          <Card.Body className="Profile Info" style={{ textAlign: 'left'}}>
           <p>Username: {userdata.Username}</p>
           <p>Email: {userdata.Email}</p>
-          <p>Birthday: {userdata.Birthday}</p>
+        
           </Card.Body>
         </Card>
       </Row>
     </Col>
   )
 }
+export default UserData ; 

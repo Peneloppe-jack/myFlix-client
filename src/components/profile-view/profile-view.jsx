@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import {  Button, Col, Row, Card, Container,NavLink } from "react-bootstrap";
 
 //import { UserData } from "../user-data/user-data;
@@ -14,7 +15,7 @@ import {UpdatedUser} from './updated-user';
 import {FavoriteMovies} from './favorite-movies';
 
 
-export function ProfileView(props) {
+export function ProfileView(props){
 
   const [userdata, setUserdata] = useState({});
   const [updatedUser, setUpdatedUser] = useState({});
@@ -31,13 +32,12 @@ export function ProfileView(props) {
       .then(response => {
         setUserdata(response.data);
         setUpdatedUser(response.data)
-        setFavoriteMoviesList(props.movies.filter(m => response.data.FavoriteMovies.includes(m._id)));
+        setFavoriteMoviesList(props.movies.filter(m => response.data.FavoriteMovies.includes(movies._id)));
       })
-      .catch(err => {
-          console.log(err);
+      .catch((error) => {
+        console.log(error);
       })
   }
-
   useEffect(() => {
     let source = axios.CancelToken.source();
 
@@ -59,8 +59,9 @@ export function ProfileView(props) {
       setUserdata(response.data);
       alert('Profile has been updated');
     })
-    .catch(e => {
-      console.log(e);
+   
+    .catch((error) => {
+      console.log(error);
     });
   }
 
@@ -81,8 +82,8 @@ export function ProfileView(props) {
 
       window.open('/', '_self');
     })
-    .catch(e => {
-      console.log(e);
+    .catch((error) => {
+      console.log(error);
     });
   }
 
@@ -92,51 +93,61 @@ export function ProfileView(props) {
             // Change state of favoriteMovieList to render component
             setFavoriteMoviesList(favoriteMoviesList.filter(movie => movie._id != id));
         })
-        .catch(e => {
-            console.log(e);
+       .catch((error) => {
+        console.log(error);
         });
 }
 
 
+
 return (
     
-    <Container>
+    <Container fluid>
     <Row>
-    
-        <Col xs ={12} sm={4}>
+
+     
+    <Col xs ={12} sm={4}>
         <Card>
           <Card.Body>
-            <UserData userdata={userdata} />
-          </Card.Body>
+        <UserData userdata={userdata} />
+        </Card.Body>
         </Card>
         </Col>
+        
+        <Col xs ={12} sm={8}>
+        <Card className= "Update"style={{ textAlign: 'left'}}>
+          <Card.Body className= "Updates"style={{ textAlign: 'left'}}>
+        <UpdatedUser userdata={userdata} handleSubmit={handleSubmit} handleUpdate={handleUpdate} />
         
        
-        <Col xs ={12} sm={8}>
-        <Card>
-          <Card.Body>    
-            <UpdatedUser userdata={userdata} handleSubmit={handleSubmit} handleUpdate={handleUpdate} />
-          </Card.Body>
+        </Card.Body>
         </Card>
         </Col>
         
-        <div>
-        <NavLink href="/"> 
-        <Button variant="link"> Back to Movies </Button>
-        </NavLink>
-        </div >
-
-      <div>
+        <Col xs ={12} >
+        <Card className= "Favorite Movies">
+          <Card.Body>
         <FavoriteMovies favoriteMoviesList={favoriteMoviesList} removeFav={removeFav} />
-        </div>  
+        
+        </Card.Body>
+        </Card>
+        </Col>
+
+        <div>
+        <NavLink href="/">Back to Movies</NavLink>
+        </div>
+
+        {/* Button to delete user */}
         <div>
             <Button className="mb-3" variant="danger" type="submit" style={{margin: 200}} onClick={deleteProfile}>
                 Delete Profile
             </Button>
         </div>
-  
+    
     </Row>
     </Container>
     
 );
-}  
+
+
+}

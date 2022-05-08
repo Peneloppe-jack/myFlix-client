@@ -7,12 +7,12 @@ export function UpdatedUser(props){
   
   return (
     <>
-      <Col lg={12}>
-        <Row>
-          <Card className="bg-light text-black" border='danger' style={{ textAlign: 'left', marginTop: 20 }}>
-      <Card.Title style={{marginTop: 10, textAlign: "center"}}>Update Profile</Card.Title>
+       <Col lg={12}>
+      <Row>
+          <Card className="Update"style={{ textAlign: 'left'}}>
+      <Card.Title style={{ textAlign: "center"}}>Update Profile</Card.Title>
           
-      <Form className="profile-form" onSubmit={(e) =>handleSubmit(e)} border='danger' style={{margin: 20}}>
+      <Form className="profile-form" onSubmit={(e) =>handleSubmit(e)} >
     
         <Form.Group controlId="formUsername" className="mb-3">
           <Form.Label>Username:</Form.Label>
@@ -47,7 +47,7 @@ export function UpdatedUser(props){
         <Button variant="primary" type="submit" onClick={handleSubmit}>
           Update
         </Button>
-        <h5>After update, please log out, then log back in</h5>
+        <h6>*Updates will be displayed after next Login</h6>
     </Form>
     </Card>
     </Row>
@@ -55,3 +55,5 @@ export function UpdatedUser(props){
     </>
   )
 }
+
+export default UpdatedUser ; 

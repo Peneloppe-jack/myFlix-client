@@ -57,6 +57,17 @@ componentDidMount() {
   });
 }
 
+
+componentDidMount() {
+  let accessToken = localStorage.getItem('token');
+  if (accessToken !== null) {
+      this.setState({
+          user: localStorage.getItem('user')
+      });
+      this.getMovies(accessToken);
+  }
+}
+
 onLoggedIn(authData) {
   console.log(authData);
   this.setState({
@@ -75,15 +86,6 @@ onLoggedOut() {
   });
 }
 
-componentDidMount() {
-  let accessToken = localStorage.getItem('token');
-  if (accessToken !== null) {
-      this.setState({
-          user: localStorage.getItem('user')
-      });
-      this.getMovies(accessToken);
-  }
-}
 
 render() {
   const { movies, user } = this.state;
@@ -149,6 +151,7 @@ render() {
             );
           }}
         />
+        
         
         <Route exact path="/profile" render={({ history }) => {
             if (!user) {
