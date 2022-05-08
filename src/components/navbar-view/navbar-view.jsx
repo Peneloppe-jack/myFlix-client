@@ -24,7 +24,7 @@ export function NavbarView({user}) {
 
 
   return (
-    <Navbar className="main-nav" sticky="top" bg="dark" expand="md" variant="dark">
+    <Navbar className="main-nav" sticky="top" bg="light-blue" expand="md" variant="dark">
         <Container fluid>
           <Navbar.Brand className="navbar-logo"
           href="/">Welcome to myFlix !</Navbar.Brand>

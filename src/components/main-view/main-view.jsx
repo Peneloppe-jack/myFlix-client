@@ -131,7 +131,16 @@ import './main-view.scss'
             }}
             />  
 
-
+          <Route exact path="/profile" render={({ history }) => {
+            if (!user) {
+            return <Col> <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+            }
+            return (
+              <Col> <ProfileView movies={movies} onBackClick={() => history.goBack()} /> </Col>
+           
+            );
+             }} />
 
         <Route
           path={`/users/${user}`}

@@ -4,8 +4,8 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Container, Card, Button, Row, Col, Form, FormGroup, FormControl } from "react-bootstrap";
-
-import "./profile-view.scss";
+import { NavbarView } from "../navbar-view/navbar-view";
+//import "./profile-view.scss";
 
 export class ProfileView extends React.Component {
     constructor() {
@@ -272,7 +272,7 @@ ProfileView.propTypes = {
     movies: PropTypes.arrayOf(PropTypes.shape({
         Title: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
-        ImagePath: PropTypes.string.isRequired,
+        ImageURL: PropTypes.string.isRequired,
         Genre: PropTypes.shape({
             Name: PropTypes.string.isRequired,
             Description: PropTypes.string.isRequired,
