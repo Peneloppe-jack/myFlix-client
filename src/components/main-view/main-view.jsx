@@ -10,14 +10,15 @@ import  MoviesList  from '../movies-list/movies-list';
 
 import{ BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
-import { LoginView } from "../login-view/login-view";
-import { MovieCard } from '../movie-card/movie-card';
-import { MovieView } from "../movie-view/movie-view";
-import { RegistrationView } from "../registration-view/registration-view";
-import { GenreView } from "../genre-view/genre-view";
+import MoviesList from '../movies-list/movies-list';
+//import { MovieCard } from '../movie-card/movie-card';
+import { MovieView } from '../movie-view/movie-view';
+import { LoginView } from '../login-view/login-view';
+import { RegistrationView } from '../registration-view/registration-view';
+import { GenreView } from "../genre-view/genre.view";
 import { DirectorView } from "../director-view/director-view";
 import { ProfileView } from "../profile-view/profile-view";
-
+import { NavbarView } from "../navbar-view/navbar-view";
 import Col  from 'react-bootstrap/Col'; 
 import Row from 'react-bootstrap/Row';
 import Container  from "react-bootstrap/Container";
