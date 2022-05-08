@@ -1,15 +1,16 @@
 import React from 'react';
 import axios from 'axios';
+
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { setMovies } from '../../actions/actions';
-
+import { setMovies, setUser } from '../../actions/actions';
+import MoviesList from '../movies-list/movies-list';
 
 import { Row, Col } from 'react-bootstrap';
 
 //import { Button } from '../button-view/button-view';
 
-import MoviesList from '../movies-list/movies-list';
+
 //import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
@@ -170,7 +171,7 @@ import './main-view.scss'
         
 
 let mapStateToProps = state => {
-  return { movies: state.movies }
+  return { movies: state.movies, user : state.user }
 }
 
-export default connect(mapStateToProps, { setMovies }) (MainView);
+export default connect(mapStateToProps, { setMovies, setUser }) (MainView);

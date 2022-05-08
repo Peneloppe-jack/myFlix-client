@@ -1,10 +1,11 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+
+import { setUser } from "../../actions/actions";;
+import { connect } from "react-redux";
+
 import { Container, Card, Button, Row, Col, Form, FormGroup, FormControl } from "react-bootstrap";
-import { NavbarView } from "../navbar-view/navbar-view";
 import "./profile-view.scss";
 
 export class ProfileView extends React.Component {
@@ -26,7 +27,7 @@ export class ProfileView extends React.Component {
     }
 
     onLoggedOut() {
-        localStorage.removeItem('token');
+        localStorage.removeItem('token');s
         localStorage.removeItem('user');
         this.setState({
             user: null
@@ -195,7 +196,7 @@ export class ProfileView extends React.Component {
                     type="password"
                     name="Password"
                     placeholder="New Password"
-                    value=""
+                    value="{Username}"
                     onChange={(e) => this.setPassword(e.target.value)}
                     required
                 />
@@ -236,6 +237,7 @@ export class ProfileView extends React.Component {
     <Row>
         <Col>
         <Card>
+
         <Card.Body>
         {FavoriteMovies.length === 0 && (
             <div className="text-center">No favorite movies</div>
@@ -287,3 +289,10 @@ ProfileView.propTypes = {
     })).isRequired,
     onBackClick: PropTypes.func.isRequired
 };
+
+
+let mapStateToProps = state => {
+    return { movies: state.movies, user : state.user }
+  }
+
+  export default connect(mapStateToProps, { setUser } )(ProfileView);

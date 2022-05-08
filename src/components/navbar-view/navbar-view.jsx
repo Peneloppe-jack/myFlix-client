@@ -29,7 +29,7 @@ export function NavbarView({user}) {
           href="/">Welcome to myFlix !</Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="md-auto">
+                <Nav className="ml-auto">
                   {isAuth() && (
                        <Nav.Link href="/profile">{user}</Nav.Link>
                   )}
