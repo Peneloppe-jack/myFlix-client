@@ -38,7 +38,7 @@ export class ProfileView extends React.Component {
         const Username = localStorage.getItem('user');
 
         axios.get(`https://mysterious-wildwood-desperado.herokuapp.com/users/${Username}`, {
-            headers: { Authorization:`Bearer ${token}`}
+            headers: { Authorization:`Bearer ${token}`},
         })
         .then(response => {
             this.setState({
@@ -67,7 +67,7 @@ export class ProfileView extends React.Component {
                 Birthday: this.state.Birthday
             },
             {
-                headers: { Authorization:`Bearer ${token}` }
+                headers: { Authorization:`Bearer ${token}`},
             }
         )
         .then((response) => {
@@ -81,17 +81,20 @@ export class ProfileView extends React.Component {
             localStorage.setItem('user', this.state.Username);
             alert("Profile updated");
             window.open('/profile', '_self');
-        });
-    };
+        })
+        .catch(function (error) {
+            console.log(error);
+          });
+      };
 
-    onRemoveFavorite = (e, movies) => {
+    onRemoveFavorite = (e, movie) => {
         e.preventDefault();
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
 
         axios.delete(`https://mysterious-wildwood-desperado.herokuapp.com/users/${Username}/movies/${movie._id}`,
             {
-                headers: { Authorization:`Bearer ${token}` }
+                headers: { Authorization:`Bearer ${token}`},
             }
         )
         .then((response) => {
@@ -102,20 +105,21 @@ export class ProfileView extends React.Component {
         .catch(function (error) {
             console.log(error);
         });
-    }
+    };
 
     onDeleteUser() {
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
 
         axios.delete(`https://mysterious-wildwood-desperado.herokuapp.com/users/${Username}`, {
-            headers: { Authorization:`Bearer ${token}` }
+            headers: { Authorization:`Bearer ${token}` },
         })
         .then((response) => {
             console.log(response);
             alert("Profile deleted");
             localStorage.removeItem('user');
             localStorage.removeItem('token');
+            window.open('/', '_self');
         })
         .catch(function (error) {
             console.log(error);
@@ -148,21 +152,21 @@ export class ProfileView extends React.Component {
 
     render() {
         const { movies, onBackClick } = this.props;
-        const { FavoriteMovies, Username, Email, Birthday } = this.state;
+        const { FavoriteMovies, Username, Email, Password, Birthday } = this.state;
 
         if (!Username) {
             return null;
         }
 
         return (
-<Container>
+<Container className = "profileview">
     <Row>
      <Col>
-    <Card>
+    <Card className = "Your Info">
      <Card.Body>
     <Card.Title>Profile</Card.Title>
     <Form 
-        className="update-form"
+        className="Updates"
         onSubmit={(e) => 
             this.editUser(
                 e,
