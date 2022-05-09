@@ -9,7 +9,7 @@ export function UpdatedUser(props){
     <>
        <Col lg={12}>
       <Row>
-          <Card className="Update"style={{ textAlign: 'left'}}>
+          <Card className="bg-light text-black" border='danger' style={{borderRadius: 20}}>
       <Card.Title style={{ textAlign: "center"}}>Update Profile</Card.Title>
           
       <Form className="profile-form" onSubmit={(e) =>handleSubmit(e)} >
@@ -21,6 +21,8 @@ export function UpdatedUser(props){
            name='Username'
            defaultValue={user.Username}
            onChange={e => handleUpdate(e)} 
+           required
+          placeholder="Enter a username"
            />
         </Form.Group>
        
@@ -31,7 +33,8 @@ export function UpdatedUser(props){
            name='Password'
            placeholder="New Password (required when updating profile info)"
            onChange={e => handleUpdate(e)} 
-           />
+            />
+          
         </Form.Group>
 
         <Form.Group controlId="formEmail" className="mb-3">
@@ -41,7 +44,10 @@ export function UpdatedUser(props){
            name='Email'
            defaultValue={user.Email}
            onChange={e => handleUpdate(e)}         
-           />
+           required
+          placeholder="Enter an email" 
+          />
+          
         </Form.Group>
       
         <Button variant="primary" type="submit" onClick={handleSubmit}>
