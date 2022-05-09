@@ -152,13 +152,19 @@ export class ProfileView extends React.Component {
         }
 
         return (
-            <Container>
+           
+            <Container fluid>
+ 
+
+ <Row>
+  <Col sx>
+
                 <Row>
                 <Col xs ={12} sm={4}>
-                        <Card>
+                <Card className="Profile Info" style={{ textAlign: 'left'}} >
                             <Card.Body>
-                                <Card.Title>Profile</Card.Title>
-
+                                <Card.Title>Profile Info </Card.Title>
+                                    <p> Username</p>
                                 </Card.Body>
                                 </Card>
                                 </Col>
@@ -168,8 +174,8 @@ export class ProfileView extends React.Component {
                             <Col xs ={12} sm={8}>
                               <Card>
                               <Card.Body>
-                                  <Form
-                                    className="update-form"
+                                  <Form className="Update"style={{ textAlign: 'left'}}
+                                
                                     onSubmit={(e) =>
                                         this.editUser(
                                             e,
@@ -229,16 +235,21 @@ export class ProfileView extends React.Component {
                                     </FormGroup>
                                     <div>
                                         <Button variant="success" type="submit" onClick={this.editUser}>Update Data</Button>
+                                    
                                         <Button variant="secondary" onClick={() => this.onDeleteUser()}>Delete Profile</Button>
+                                    <p> 
+                                        *Updates will be displayed after next Login
+                                    </p>
                                     </div>
                                 </Form>
                             </Card.Body>
                         </Card>
                     </Col>
                 </Row>
-
                 <Row>
-                    <Col>
+                     <Col xs = {2}>
+                        <h4> Favorites Movies</h4>
+                     
                         <Card>
                             <Card.Body>
                                 {FavoriteMovies.length === 0 && (
@@ -249,7 +260,7 @@ export class ProfileView extends React.Component {
                                         if (movie._id === FavoriteMovies.find((fav) => fav === movie._id)
                                         ) {
                                             return (
-                                                <Card className="favorite-movie" key={movie._id} >
+                                                <Card sx={12} md= {6}lg={3} className="favorite-movie" key={movie._id} >
                                                     <Card.Img
                                                         className="favorite-movie-image"
                                                         variant="top"
@@ -268,12 +279,17 @@ export class ProfileView extends React.Component {
                                 </Row>
                             </Card.Body>
                         </Card>
+                  
                     </Col>
                 </Row>
+                </Col>
+                </Row>
+                
             </Container>
         )
     }
 }
+
 
 ProfileView.propTypes = {
     movies: PropTypes.arrayOf(PropTypes.shape({
