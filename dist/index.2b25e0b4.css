@@ -1,0 +1,122 @@
+#MainView * {
+  box-sizing: border-box;
+}
+
+.main-view {
+  width: 100%;
+  background: #073763;
+  font-family: Lora Sans, sans-serif;
+  display: inline-block;
+}
+
+.bg-navColor {
+  background: #000;
+}
+
+#Registration * {
+  box-sizing: border-box;
+}
+
+.registerContainer {
+  width: 100%;
+  height: 100%;
+  background: #073763;
+}
+
+.bg-navColor {
+  background: #000;
+}
+
+.registerCard {
+  width: 100%;
+  max-width: 400px;
+  color: #000;
+  background: #fff;
+  margin: 50px auto auto;
+}
+
+.registerButton {
+  width: 100%;
+  display: block;
+}
+
+#LoginView * {
+  box-sizing: border-box;
+}
+
+.logContainer {
+  width: 100%;
+  height: 100vh;
+  background: #073763;
+}
+
+.bg-navColor {
+  background: #000;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+  color: #000;
+  background: #fff;
+  margin: 50px auto auto;
+}
+
+.loginButton {
+  width: 100%;
+  display: block;
+}
+
+#MovieCard .movieContainer {
+  display: inline-block;
+}
+
+.movieCard {
+  width: 100%;
+  margin: 20px;
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+#MovieView .moviesContainer {
+  width: 100%;
+  height: 100vh;
+  background: #073763;
+}
+
+.movie-view {
+  color: #fff;
+  margin-top: 50px;
+}
+
+.movie-poster {
+  text-align: center;
+}
+
+.title, .description, .genre, .director {
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.movie-button-div {
+  text-align: center;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.movie-button {
+  width: 100%;
+  background-color: #000;
+  margin-top: 20px;
+}
+
+.my-flix {
+  color: #4682b4;
+}
+
+/*# sourceMappingURL=index.2b25e0b4.css.map */

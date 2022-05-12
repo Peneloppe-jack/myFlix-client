@@ -1,7 +1,3 @@
-#MovieCard .movieContainer {
-  display: inline-block;
-}
-
 .movieCard {
   width: 100%;
   margin: 20px;
@@ -46,25 +42,6 @@
   margin-top: 20px;
 }
 
-#MainView * {
-  box-sizing: border-box;
-}
-
-.main-view {
-  width: 100%;
-  background: #073763;
-  font-family: Lora Sans, sans-serif;
-  display: inline-block;
-}
-
-.bg-navColor {
-  background: #000;
-}
-
-#Registration * {
-  box-sizing: border-box;
-}
-
 .registerContainer {
   width: 100%;
   height: 100%;
@@ -88,8 +65,15 @@
   display: block;
 }
 
-* {
-  box-sizing: border-box;
+.main-view {
+  width: 100%;
+  background: #073763;
+  font-family: Lora Sans, sans-serif;
+  display: inline-block;
+}
+
+.bg-navColor {
+  background: #000;
 }
 
 html, body, .app-container {
