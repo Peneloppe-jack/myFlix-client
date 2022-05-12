@@ -1,0 +1,65 @@
+#LoginView * {
+  box-sizing: border-box;
+}
+
+.logContainer {
+  width: 100%;
+  height: 100vh;
+  background: #073763;
+}
+
+.bg-navColor {
+  background: #000;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+  color: #000;
+  background: #fff;
+  margin: 50px auto auto;
+}
+
+.loginButton {
+  width: 100%;
+  display: block;
+}
+
+#MovieView .moviesContainer {
+  width: 100%;
+  height: 100vh;
+  background: #073763;
+}
+
+.movie-view {
+  color: #fff;
+  margin-top: 50px;
+}
+
+.movie-poster {
+  text-align: center;
+}
+
+.title, .description, .genre, .director {
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.movie-button-div {
+  text-align: center;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.movie-button {
+  width: 100%;
+  background-color: #000;
+  margin-top: 20px;
+}
+
+.my-flix {
+  color: #4682b4;
+}
+
+/*# sourceMappingURL=index.27d8da6b.css.map */
