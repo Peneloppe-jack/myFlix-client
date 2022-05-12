@@ -1,1 +1,1 @@
-Using React Build tools to set up myFlilx app
+Using React Build tools to set up myFlix app
